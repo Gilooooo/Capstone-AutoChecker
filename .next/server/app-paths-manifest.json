@@ -1,0 +1,9 @@
+{
+  "/Login/page": "app/Login/page.js",
+  "/Admin_Page/Admin/page": "app/Admin_Page/Admin/page.js",
+  "/Admin_Page/Student_Page/page": "app/Admin_Page/Student_Page/page.js",
+  "/Faculty/page": "app/Faculty/page.js",
+  "/Student/page": "app/Student/page.js",
+  "/Student/Settings/page": "app/Student/Settings/page.js",
+  "/Student/ReportProblem/page": "app/Student/ReportProblem/page.js"
+}
