@@ -28,7 +28,7 @@ export default function FacultySettings({clicked, setClicked}) {
     const fetchFacultyInfo = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/facultyinfos?TUPCID=${TUPCID}`
+          `https://capstone-server-production-ddc7.up.railway.app/facultyinfos?TUPCID=${TUPCID}`
         );
         const {
           FIRSTNAME,
@@ -95,7 +95,7 @@ export default function FacultySettings({clicked, setClicked}) {
   const updateFacultyDataOnServer = async (TUPCID, updatedData) => {
     try {
       await axios.put(
-        `http://localhost:3001/updatefacultyinfos/${TUPCID}`,
+        `https://capstone-server-production-ddc7.up.railway.app/updatefacultyinfos/${TUPCID}`,
         updatedData
       );
       // Update state with new values

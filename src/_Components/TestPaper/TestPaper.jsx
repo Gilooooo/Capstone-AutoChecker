@@ -38,7 +38,7 @@ const QA = ({ setBack }) => {
       if (generateWord) {
         try {
           const response = await fetch(
-            `http://localhost:3001/generateTestPaperdoc/${uid}`
+            `https://capstone-server-production-ddc7.up.railway.app/generateTestPaperdoc/${uid}`
           );
 
           if (response.ok) {
@@ -60,7 +60,7 @@ const QA = ({ setBack }) => {
         // Generate and download the PDF document as before
         try {
           const response = await fetch(
-            `http://localhost:3001/generateTestPaperpdf/${uid}`
+            `https://capstone-server-production-ddc7.up.railway.app/generateTestPaperpdf/${uid}`
           );
 
           if (response.ok) {
@@ -786,7 +786,7 @@ const QA = ({ setBack }) => {
       console.log("createtestpaper");
       console.log(updatedSavedValues);
       const response = await axios.post(
-        "http://localhost:3001/createtestpaper",
+        "https://capstone-server-production-ddc7.up.railway.app/createtestpaper",
         {
           TUPCID: TUPCID,
           UID: uid,
@@ -805,7 +805,7 @@ const QA = ({ setBack }) => {
       }
 
       const savequestions = await axios.post(
-        "http://localhost:3001/addtopreset",
+        "https://capstone-server-production-ddc7.up.railway.app/addtopreset",
         {
           Professor_ID: TUPCID,
           TESTNAME: testname,

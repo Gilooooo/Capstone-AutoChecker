@@ -23,7 +23,7 @@ function StudentSettings({ clicked, setClicked }) {
     const fetchstudentdate = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/studinfos?TUPCID=${TUPCID}`
+          `https://capstone-server-production-ddc7.up.railway.app/studinfos?TUPCID=${TUPCID}`
         );
         const {
           FIRSTNAME,
@@ -94,7 +94,7 @@ function StudentSettings({ clicked, setClicked }) {
   const updateStudentDataOnServer = async (TUPCID, updatedData) => {
     try {
       await axios.put(
-        `http://localhost:3001/updatestudentinfos?TUPCID=${TUPCID}`,
+        `https://capstone-server-production-ddc7.up.railway.app/updatestudentinfos?TUPCID=${TUPCID}`,
         updatedData
       );
       setFirstName(updatedData.FIRSTNAME);

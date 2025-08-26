@@ -14,7 +14,7 @@ function AdminReport({clicked, setClicked}){
       };
       try {
         const response = await axios.post(
-          "http://localhost:3001/ReportProblem",
+          "https://capstone-server-production-ddc7.up.railway.app/ReportProblem",
           Information
         );
         if (response.status === 200) {

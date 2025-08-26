@@ -13,7 +13,7 @@ function FacultyReportProblem({ clicked, setClicked }) {
   const fetchemail = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/FacultyReportProblem?UidProf=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/FacultyReportProblem?UidProf=${TUPCID}`
       );
       if (response.status === 200) {
         setEmail(response.data);
@@ -29,7 +29,7 @@ function FacultyReportProblem({ clicked, setClicked }) {
     };
     try {
       const response = await axios.post(
-        "http://localhost:3001/ReportProblem",
+        "https://capstone-server-production-ddc7.up.railway.app/ReportProblem",
         Information
       );
       if (response.status === 200) {

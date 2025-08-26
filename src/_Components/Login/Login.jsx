@@ -31,7 +31,7 @@ function Login() {
   const submitForm = async (data) => {
     try {
       console.log(data);
-      const response = await axios.post("http://localhost:3001/Login", data);
+      const response = await axios.post("https://capstone-server-production-ddc7.up.railway.app/Login", data);
       setMessage("");
       setTUPCID(response.data.Uid.toString());
       if (response.data.accountType === "admin"){

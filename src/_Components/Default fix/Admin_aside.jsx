@@ -21,7 +21,7 @@ function AdminAside({ clicked, setClicked }) {
   const fetchingAdmin = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/AdminAside?Uid_Account=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/AdminAside?Uid_Account=${TUPCID}`
       );
       setInformation(response.data[0]);
     } catch (err) {

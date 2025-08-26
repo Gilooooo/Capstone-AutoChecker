@@ -13,7 +13,7 @@ function StudentReportProblem({ clicked, setClicked }) {
   const fetchemail = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/StudentReportProblem?TUPCID=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/StudentReportProblem?TUPCID=${TUPCID}`
       );
       setEmail(response.data[0].GSFEACC);
     } catch (err) {
@@ -27,7 +27,7 @@ function StudentReportProblem({ clicked, setClicked }) {
     };
     try {
       const response = await axios.post(
-        "http://localhost:3001/ReportProblem",
+        "https://capstone-server-production-ddc7.up.railway.app/ReportProblem",
         Information
       );
       if (response.status === 200) {

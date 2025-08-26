@@ -54,7 +54,7 @@ function StudentRegistration() {
   const submitForm = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/StudentRegister",
+        "https://capstone-server-production-ddc7.up.railway.app/StudentRegister",
         data
       );
       if (response.status === 200) {
@@ -76,7 +76,7 @@ function StudentRegistration() {
   };
   const courses = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Course");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Course");
       setCoursesList(response.data);
     } catch (err) {
       console.error(err);
@@ -84,7 +84,7 @@ function StudentRegistration() {
   };
   const section = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Section");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Section");
       setSectionList(response.data);
     } catch (err) {
       console.error(err);
@@ -95,7 +95,7 @@ function StudentRegistration() {
   );
   const year = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Year");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Year");
       setYearList(response.data);
     } catch (err) {
       console.error(err);

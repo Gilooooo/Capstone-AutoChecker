@@ -42,7 +42,7 @@ function Preset({ setClicked, clicked }) {
   const fetchingPresetTestList = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/Preset?UidProf=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/Preset?UidProf=${TUPCID}`
       );
       if (response.status === 200) {
         setPresetList(response.data);
@@ -57,7 +57,7 @@ function Preset({ setClicked, clicked }) {
   const handleTestClick = async (test) => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/PresetQuestions?TestId=${test.UID}`
+        `https://capstone-server-production-ddc7.up.railway.app/PresetQuestions?TestId=${test.UID}`
       );
       if (response.status === 200) {
         setSelectedTest({

@@ -30,12 +30,12 @@ function AdminCombo({ setCLicked, clicked }) {
         semesterResponse,
         periodResponse,
       ] = await Promise.all([
-        axios.get(`http://localhost:3001/Course?`),
-        axios.get("http://localhost:3001/SubjectDept"),
-        axios.get("http://localhost:3001/Section"),
-        axios.get("http://localhost:3001/Year"),
-        axios.get("http://localhost:3001/Semester"),
-        axios.get("http://localhost:3001/Period"),
+        axios.get(`https://capstone-server-production-ddc7.up.railway.app/Course?`),
+        axios.get("https://capstone-server-production-ddc7.up.railway.app/SubjectDept"),
+        axios.get("https://capstone-server-production-ddc7.up.railway.app/Section"),
+        axios.get("https://capstone-server-production-ddc7.up.railway.app/Year"),
+        axios.get("https://capstone-server-production-ddc7.up.railway.app/Semester"),
+        axios.get("https://capstone-server-production-ddc7.up.railway.app/Period"),
       ]);
 
       setCourseList(courseResponse.data);
@@ -98,7 +98,7 @@ function AdminCombo({ setCLicked, clicked }) {
     console.log(info);
     try {
       const response = await axios.post(
-        `http://localhost:3001/AddCombo?types=${types}`,
+        `https://capstone-server-production-ddc7.up.railway.app/AddCombo?types=${types}`,
         info
       );
       console.log(response.data);
@@ -113,7 +113,7 @@ function AdminCombo({ setCLicked, clicked }) {
     console.log(info);
     try {
       const response = await axios.post(
-        `http://localhost:3001/DeleteCombo?types=${types}`,
+        `https://capstone-server-production-ddc7.up.railway.app/DeleteCombo?types=${types}`,
         info
       );
       console.log(response.data);

@@ -68,7 +68,7 @@ function Premade({setBack}) {
     );
     try {
       const response = await axios.post(
-        "http://localhost:3001/createtestpaper",
+        "https://capstone-server-production-ddc7.up.railway.app/createtestpaper",
         {
           TUPCID: TUPCID,
           UID: uid,
@@ -84,7 +84,7 @@ function Premade({setBack}) {
         localStorage.setItem(localKey1, JSON.stringify(questionType1));
         localStorage.setItem(localKey2, JSON.stringify(questionType2));
         try {
-          await axios.post("http://localhost:3001/addtopreset", {
+          await axios.post("https://capstone-server-production-ddc7.up.railway.app/addtopreset", {
             Professor_ID: TUPCID,
             TESTNAME: testname,
             UID: uid,
@@ -169,7 +169,7 @@ const calculateTotalScore = (questionType) => {
       if (wordGenerate) {
         try {
           const response = await fetch(
-            `http://localhost:3001/generateTestPaperdoc/${uid}`
+            `https://capstone-server-production-ddc7.up.railway.app/generateTestPaperdoc/${uid}`
           );
 
           if (response.ok) {
@@ -191,7 +191,7 @@ const calculateTotalScore = (questionType) => {
         // Generate and download the PDF document as before
         try {
           const response = await fetch(
-            `http://localhost:3001/generateTestPaperpdf/${uid}`
+            `https://capstone-server-production-ddc7.up.railway.app/generateTestPaperpdf/${uid}`
           );
 
           if (response.ok) {

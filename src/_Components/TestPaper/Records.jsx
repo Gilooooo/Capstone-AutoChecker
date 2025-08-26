@@ -34,7 +34,7 @@ export default function Records() {
   const fetchResult = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/Studentscores/${uid}`
+        `https://capstone-server-production-ddc7.up.railway.app/Studentscores/${uid}`
       );
 
       if (response.status === 200) {
@@ -80,7 +80,7 @@ export default function Records() {
   const generateSheet = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/printstudentrecord/${uid}`,
+        `https://capstone-server-production-ddc7.up.railway.app/printstudentrecord/${uid}`,
         {
           responseType: "blob",
         }

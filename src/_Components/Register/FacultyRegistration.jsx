@@ -49,7 +49,7 @@ function FacultyRegistration() {
   const submitForm = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/FacultyRegister",
+        "https://capstone-server-production-ddc7.up.railway.app/FacultyRegister",
         data
       );
       if (response.status === 200) {
@@ -71,7 +71,7 @@ function FacultyRegistration() {
   };
   const subjectDept = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/SubjectDept");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/SubjectDept");
       setSubjectDeptList(response.data);
     } catch (err) {
       console.error(err);

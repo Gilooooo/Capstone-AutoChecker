@@ -8,7 +8,7 @@ function Admin_Faculty({ clicked, setClicked }) {
   const [searchValue, setSearchValue] = useState("");
   const fetchFaculty = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Admin_Faculty");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Admin_Faculty");
       setFaculty(response.data.reverse());
     } catch (err) {
       console.error(err);
@@ -35,7 +35,7 @@ function Admin_Faculty({ clicked, setClicked }) {
 
 const generateAuditLog = async () => {
   try {
-    const response = await axios.get('http://localhost:3001/generatefacultylog', {
+    const response = await axios.get('https://capstone-server-production-ddc7.up.railway.app/generatefacultylog', {
       responseType: 'blob',
     });
 

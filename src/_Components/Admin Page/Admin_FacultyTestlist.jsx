@@ -9,7 +9,7 @@ function FacultyTestList({ clicked, setClicked }) {
   const fetchTestlist = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/Admin_FacultyTestList"
+        "https://capstone-server-production-ddc7.up.railway.app/Admin_FacultyTestList"
       );
 
       setTestlist(response.data.reverse());
@@ -38,7 +38,7 @@ function FacultyTestList({ clicked, setClicked }) {
 
 const generatetestlist = async () => {
   try {
-    const response = await axios.get('http://localhost:3001/generatetestlistlog', {
+    const response = await axios.get('https://capstone-server-production-ddc7.up.railway.app/generatetestlistlog', {
       responseType: 'blob',
     });
 

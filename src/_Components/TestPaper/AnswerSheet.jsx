@@ -23,7 +23,7 @@ export default function AnswerSheet() {
   const generateAnswerSheet = async () => {
     try {
       
-      const response = await fetch(`http://localhost:3001/generateAnswerSheet/${uid}/${sectionname}`);
+      const response = await fetch(`https://capstone-server-production-ddc7.up.railway.app/generateAnswerSheet/${uid}/${sectionname}`);
    
   
       if (response.ok) {
@@ -50,7 +50,7 @@ export default function AnswerSheet() {
   const fetchQtypeandQn = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/getquestionstypeandnumber?TUPCID=${TUPCID}&uid=${uid}`
+        `https://capstone-server-production-ddc7.up.railway.app/getquestionstypeandnumber?TUPCID=${TUPCID}&uid=${uid}`
       );
       if (response.status === 200) {
         const { testType, questionNumbers, questionTypes } = response.data;

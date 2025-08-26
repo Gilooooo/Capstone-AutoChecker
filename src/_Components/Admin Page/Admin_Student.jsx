@@ -8,7 +8,7 @@ function Admin_Student({ clicked, setClicked }) {
 
   const fetchStudent = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Admin_Students");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Admin_Students");
       setStudent(response.data.reverse());
     } catch (err) {
       console.error(err);
@@ -34,7 +34,7 @@ function Admin_Student({ clicked, setClicked }) {
 
   const generatestudentlist = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/generatestudentlistlog', {
+      const response = await axios.get('https://capstone-server-production-ddc7.up.railway.app/generatestudentlistlog', {
         responseType: 'blob',
       });
 

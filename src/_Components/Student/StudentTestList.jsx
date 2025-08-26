@@ -17,13 +17,13 @@ function StudentTestList({ clicked, setClicked }) {
   const Join = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/StudentTestList?uidsection=${uidSection}`
+        `https://capstone-server-production-ddc7.up.railway.app/StudentTestList?uidsection=${uidSection}`
       );
       if (response.status === 200) {
         setMessage("");
         try {
           const response1 = await axios.put(
-            `http://localhost:3001/StudentTestList?uidStudent=${TUPCID}`,
+            `https://capstone-server-production-ddc7.up.railway.app/StudentTestList?uidStudent=${TUPCID}`,
             response.data[0]
           );
           if (response1.status === 200) {
@@ -43,7 +43,7 @@ function StudentTestList({ clicked, setClicked }) {
   const fetchingStudentTest = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/StudentSectionList?uidStudent=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/StudentSectionList?uidStudent=${TUPCID}`
       );
 
       const enrolledSections = response.data.enrolledSections || [];

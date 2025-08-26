@@ -26,7 +26,7 @@ function MatchCode() {
 
   const submitForm = async (data) => {
     try{
-      const response = await axios.post(`http://localhost:3001/MatchCode`, data)
+      const response = await axios.post(`https://capstone-server-production-ddc7.up.railway.app/MatchCode`, data)
       if(response.status === 200){
         router.push(`/Login/Password/UpdatePassword?TUPCID=${Tupcid}&GSFEACC=${GsfeAcc}`)
       }

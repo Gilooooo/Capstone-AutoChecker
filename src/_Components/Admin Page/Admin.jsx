@@ -18,19 +18,19 @@ function AdminDashboard({ clicked, setClicked }) {
   const fetchData = async () => {
     try {
       const facultiesResponse = await axios.get(
-        "http://localhost:3001/getfacultyrecords"
+        "https://capstone-server-production-ddc7.up.railway.app/getfacultyrecords"
       );
       setFaculties(facultiesResponse.data.reverse()); // Reverse faculty records
 
       const studentsResponse = await axios.get(
-        "http://localhost:3001/getstudentrecords"
+        "https://capstone-server-production-ddc7.up.railway.app/getstudentrecords"
       );
       setStudents(studentsResponse.data.reverse()); // Reverse student records
 
-      const loginResponse = await axios.get("http://localhost:3001/getlogin");
+      const loginResponse = await axios.get("https://capstone-server-production-ddc7.up.railway.app/getlogin");
       setlogin(loginResponse.data.reverse()); // Reverse login records
 
-      const apiresponse = await axios.get("http://localhost:3001/Getting");
+      const apiresponse = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Getting");
       setApiKey(apiresponse.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -42,7 +42,7 @@ function AdminDashboard({ clicked, setClicked }) {
 
   const ChangedApi = async() => {
     try {
-      const response = await axios.post("http://localhost:3001/Change", {secret : apiChange});
+      const response = await axios.post("https://capstone-server-production-ddc7.up.railway.app/Change", {secret : apiChange});
       if(response.status === 200){
         setChanging(false)
         fetchData();
@@ -55,7 +55,7 @@ function AdminDashboard({ clicked, setClicked }) {
   const generateloginaudit = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/generateloginaudit",
+        "https://capstone-server-production-ddc7.up.railway.app/generateloginaudit",
         {
           responseType: "blob",
         }

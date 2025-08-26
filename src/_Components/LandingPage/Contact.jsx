@@ -14,7 +14,7 @@ function Contact({ scrollToTop }) {
     try {
       if (email.trim !== "" && email.includes(emailReq) && message.trim !== "") {
         const response = await axios.post(
-          "http://localhost:3001/ReportProblem",
+          "https://capstone-server-production-ddc7.up.railway.app/ReportProblem",
           sendInfor
         );
         if (response.status === 200) {

@@ -36,7 +36,7 @@ function StudentResult({ clicked, setClicked }) {
   const fetchStudentname = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/Studentname2?studentid=${studentid}`
+        `https://capstone-server-production-ddc7.up.railway.app/Studentname2?studentid=${studentid}`
       );
       setTUPCID(response.data.TUPCID);
     } catch (err) {
@@ -47,7 +47,7 @@ function StudentResult({ clicked, setClicked }) {
   const fetchResult = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/myresult?TUPCID=${TUPCID}&uid=${uid}`
+        `https://capstone-server-production-ddc7.up.railway.app/myresult?TUPCID=${TUPCID}&uid=${uid}`
       );
 
       if (response.status === 200) {
@@ -76,7 +76,7 @@ function StudentResult({ clicked, setClicked }) {
   const fetchQuestionData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/getquestionstypeandnumberandanswer?uid=${uid}`
+        `https://capstone-server-production-ddc7.up.railway.app/getquestionstypeandnumberandanswer?uid=${uid}`
       );
       if (response.status === 200) {
         const { questionNumbers, questionTypes, answers, score } =
@@ -126,7 +126,7 @@ function StudentResult({ clicked, setClicked }) {
   const fetchStudentAnswers = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/getstudentanswers?TUPCID=${TUPCID}&UID=${uid}`
+        `https://capstone-server-production-ddc7.up.railway.app/getstudentanswers?TUPCID=${TUPCID}&UID=${uid}`
       );
       if (response.status === 200) {
         const { studentAnswers } = response.data;

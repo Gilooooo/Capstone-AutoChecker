@@ -46,7 +46,7 @@ function ListOfTest({ setClicked, clicked }) {
       setMessage("");
       try {
         const response = await axios.get(
-          `http://localhost:3001/CheckTestName`,
+          `https://capstone-server-production-ddc7.up.railway.app/CheckTestName`,
           {
             params: {
               TestName: TestName,
@@ -58,7 +58,7 @@ function ListOfTest({ setClicked, clicked }) {
         );
         if (response.status === 200) {
           const response1 = await axios.post(
-            "http://localhost:3001/TestList",
+            "https://capstone-server-production-ddc7.up.railway.app/TestList",
             New
           );
           if (response1.status === 200) {
@@ -114,7 +114,7 @@ function ListOfTest({ setClicked, clicked }) {
   const removeTest = async (data) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/TestList?UidTest=${data}`
+        `https://capstone-server-production-ddc7.up.railway.app/TestList?UidTest=${data}`
       );
       if (response.status === 200) {
         fetchingTestList();
@@ -127,7 +127,7 @@ function ListOfTest({ setClicked, clicked }) {
   const publish = async (data) => {
     try {
       const response = await axios.post(
-        `http://localhost:3001/PublishTest?Uid_Prof=${TUPCID}`,
+        `https://capstone-server-production-ddc7.up.railway.app/PublishTest?Uid_Prof=${TUPCID}`,
         data
       );
       if (response.status === 200) {
@@ -144,7 +144,7 @@ function ListOfTest({ setClicked, clicked }) {
   const checkingPublish = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:3001/CheckPublish`,
+        `https://capstone-server-production-ddc7.up.railway.app/CheckPublish`,
         Uidtest
       );
       setPublishedTest(response.data.existingItems);
@@ -155,7 +155,7 @@ function ListOfTest({ setClicked, clicked }) {
   const fetchingSectionName = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/TestListSectionName?UidProf=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/TestListSectionName?UidProf=${TUPCID}`
       );
       setSectionSubjectName(response.data);
     } catch (err) {
@@ -166,7 +166,7 @@ function ListOfTest({ setClicked, clicked }) {
   const fetchingTestList = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/TestList?UidProf=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/TestList?UidProf=${TUPCID}`
       );
       if (response.status === 200) {
         setList(response.data);
@@ -177,7 +177,7 @@ function ListOfTest({ setClicked, clicked }) {
   };
   const fetchSem = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Semester");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Semester");
       setSemList(response.data);
     } catch (error) {
       console.error(error);
@@ -185,7 +185,7 @@ function ListOfTest({ setClicked, clicked }) {
   };
   const fetchPeriod = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Period");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Period");
       setPeriodList(response.data);
     } catch (error) {
       console.error(error);

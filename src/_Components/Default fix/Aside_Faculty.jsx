@@ -13,7 +13,7 @@ function Aside_Faculty({ clicked, setClicked }) {
   const fetchAside = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/FacultyAside?UidProf=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/FacultyAside?UidProf=${TUPCID}`
       );
       response.data.map((info) => {
         setInfo({
@@ -62,7 +62,7 @@ function Aside_Faculty({ clicked, setClicked }) {
       };
 
       const logoutResponse = await axios.post(
-        "http://localhost:3001/facultylogout",
+        "https://capstone-server-production-ddc7.up.railway.app/facultylogout",
         data
       );
 

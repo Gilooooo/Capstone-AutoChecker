@@ -36,7 +36,7 @@ function UpdatePassword() {
   const submitForm = async (data) => {
     try {
       const response = await axios.put(
-        `http://localhost:3001/UpdatePassword?TUPCID=${Tupcid}`,
+        `https://capstone-server-production-ddc7.up.railway.app/UpdatePassword?TUPCID=${Tupcid}`,
         data
       );
       if (response.status === 200) {

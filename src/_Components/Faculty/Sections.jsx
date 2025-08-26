@@ -48,7 +48,7 @@ function Sections({ setClicked, clicked }) {
       setMessage("");
       try {
         const response = await axios.put(
-          "http://localhost:3001/Faculty_sections",
+          "https://capstone-server-production-ddc7.up.railway.app/Faculty_sections",
           New
         );
         if (response.status === 200) {
@@ -66,7 +66,7 @@ function Sections({ setClicked, clicked }) {
   const fetchingSections = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/Faculty_sections?UidProf=${TUPCID}`
+        `https://capstone-server-production-ddc7.up.railway.app/Faculty_sections?UidProf=${TUPCID}`
       );
       setSectionList(response.data);
     } catch (err) {
@@ -87,7 +87,7 @@ function Sections({ setClicked, clicked }) {
 
   const fetchingYear = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Year");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Year");
       setYearList(response.data);
     } catch (error) {
       console.error(error);
@@ -96,7 +96,7 @@ function Sections({ setClicked, clicked }) {
   const filterYear = yearList.filter((years) => years.Year !== null)
   const fetchingCourse = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Course");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Course");
       setCourseList(response.data);
     } catch (error) {
       console.error(error);
@@ -105,7 +105,7 @@ function Sections({ setClicked, clicked }) {
   
   const fetchingSection = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Section");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Section");
       setSectionComboList(response.data);
     } catch (error) {
       console.error(error);

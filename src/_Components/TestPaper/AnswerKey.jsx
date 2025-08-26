@@ -85,7 +85,7 @@ export default function AnswerKey() {
 
   const fetchingApi = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/Getting2");
+      const response = await axios.get("https://capstone-server-production-ddc7.up.railway.app/Getting2");
       if (response.status === 200) {
         setApi(response.data[0].Secret);
       }
@@ -199,7 +199,7 @@ export default function AnswerKey() {
   const fetchQuestionData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/getquestionstypeandnumberandanswer?uid=${uid}`
+        `https://capstone-server-production-ddc7.up.railway.app/getquestionstypeandnumberandanswer?uid=${uid}`
       );
       if (response.status === 200) {
         const {
@@ -380,7 +380,7 @@ export default function AnswerKey() {
   const fetchStudentname = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/Studentname/${studentid}`
+        `https://capstone-server-production-ddc7.up.railway.app/Studentname/${studentid}`
       );
       setStudents(response.data);
     } catch (err) {
@@ -431,7 +431,7 @@ export default function AnswerKey() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/sendresult",
+        "https://capstone-server-production-ddc7.up.railway.app/sendresult",
         data
       );
       if (response.status === 200) {

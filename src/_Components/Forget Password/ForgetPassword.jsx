@@ -34,7 +34,7 @@ function ForgetPassword() {
     const { Tupcid, Gsfeacc } = data;
     try {
       const response = await axios.post(
-        `http://localhost:3001/ForgetPassword?TUPCID=${Tupcid}&GSFEACC=${Gsfeacc}`
+        `https://capstone-server-production-ddc7.up.railway.app/ForgetPassword?TUPCID=${Tupcid}&GSFEACC=${Gsfeacc}`
       );
       if (response.status === 200) {
         setMessage(response.data.message)

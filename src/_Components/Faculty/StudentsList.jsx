@@ -46,7 +46,7 @@ function StudentsList({ clicked, setClicked }) {
   const fetchStudents = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/Faculty_StudentList?Uid_Section=${Uid_Section}&Section=${Section}`
+        `https://capstone-server-production-ddc7.up.railway.app/Faculty_StudentList?Uid_Section=${Uid_Section}&Section=${Section}`
       );
       setStudents(response.data);
     } catch (err) {
@@ -89,7 +89,7 @@ function StudentsList({ clicked, setClicked }) {
     
     try {
       const response = await axios.delete(
-        `http://localhost:3001/Faculty_Students?Uid_Section=${Uid_Section}&Professor_Uid=${TUPCID}&Section=${Section}`,
+        `https://capstone-server-production-ddc7.up.railway.app/Faculty_Students?Uid_Section=${Uid_Section}&Professor_Uid=${TUPCID}&Section=${Section}`,
         { data }
       );
       if(response.status == 200){
